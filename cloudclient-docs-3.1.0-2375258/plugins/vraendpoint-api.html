@@ -1,0 +1,113 @@
+<html><body><p align="left"><font size="6" face="Arial"><a id="top">VRA ENDPOINT Commands</a></font></p><br><table style="border=1px solid black;border-collapse:collapse;"> <tr><th bgcolor="#336699"><font face="Arial" color="white">Description</font></th><th bgcolor="#336699"><font face="Arial" color="white">Command</font></th></tr><tr><td><small><a style="text-decoration:none" href="#AddvCloudendpoint" target="main"><font face="Arial" color="#000000">Add vCloud endpoint&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra endpoint add vcloud</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#Addvsphereendpoint" target="main"><font face="Arial" color="#000000">Add vsphere endpoint&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra endpoint add vsphere</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#Startdatacollectiononthespecifiedendpoint" target="main"><font face="Arial" color="#000000">Start datacollection on the specified endpoint&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra endpoint datacollection start</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#Getendpointsdetail" target="main"><font face="Arial" color="#000000">Get endpoints detail&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra endpoint detail</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#Listendpointsoptionallyfilteredbytype" target="main"><font face="Arial" color="#000000">List endpoints optionally filtered by type&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra endpoint list</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#Updateendpoint" target="main"><font face="Arial" color="#000000">Update endpoint&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra endpoint update</font></small></td></tr></table><br><hr color="F0F0F0"/><table> 
+<tr><td><H4><font face="Arial"><a id="AddvCloudendpoint">Add vCloud endpoint</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra endpoint add vcloud</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--name</small></font><small><font face="Arial"> (Enter endpoint name)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--credential</small></font><small><font face="Arial"> (Name or ID of Credentail)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--address</small></font><small><font face="Arial"> (address of vsphere endpoint)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--organization</small></font><small><font face="Arial"> (Organization of vCloud endpoint)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--properties</small></font><small><font face="Arial"> (Properties (name=value,name1=value1))</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--description</small></font><small><font face="Arial"> (Description)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="Addvsphereendpoint">Add vsphere endpoint</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra endpoint add vsphere</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--name</small></font><small><font face="Arial"> (Enter endpoint name)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--credential</small></font><small><font face="Arial"> (Name or ID of Credentail)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--address</small></font><small><font face="Arial"> (address of vsphere endpoint)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--properties</small></font><small><font face="Arial"> (Properties (name=value,name1=value1))</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--vcnsaddress</small></font><small><font face="Arial"> (Address of VCNS applicance)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--vcnscredentials</small></font><small><font face="Arial"> (Credentials for VCNS applicance (name or id))</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--description</small></font><small><font face="Arial"> (Description)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="Startdatacollectiononthespecifiedendpoint">Start datacollection on the specified endpoint</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra endpoint datacollection start</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--endpointname</small></font><small><font face="Arial"> (Name of Host or Cluster)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--waitforcompletion</small></font><small><font face="Arial"> (Wait till datacollection is complete ?)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="Getendpointsdetail">Get endpoints detail</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra endpoint detail</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Endpoint id or name)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="Listendpointsoptionallyfilteredbytype">List endpoints optionally filtered by type</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra endpoint list</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--type</small></font><small><font face="Arial"> (Type of endpoints to display, vSphere or vCloud. If option not provided displays all Endpoints)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--page</small></font><small><font face="Arial"> (page number)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--pageSize</small></font><small><font face="Arial"> (page size)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="Updateendpoint">Update endpoint</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra endpoint update</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Endpoint Id or Name)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--address</small></font><small><font face="Arial"> (address of vsphere endpoint)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<footer><p><small>Copyright 2014 VMware, Inc. All rights reserved.</small></p></footer></body></html>

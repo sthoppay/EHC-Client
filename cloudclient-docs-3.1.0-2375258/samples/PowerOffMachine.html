@@ -1,0 +1,13 @@
+<html><body><font face="Courier New">
+<p>#!/bin/sh
+<p>#
+<p># Setup environment variables for auto login to CloudClient Shell
+<p>. ./env.sh
+<p>
+<p># Provide Machine Name and Action, a guid or name is supported
+<p>export machine='"vm-0023"'
+<p>export action='"Power Off"'
+<p>
+<p># Execute CloudClient
+<p>./bin/cloudclient.sh vra provisioneditem action execute --id $machine --action $action
+</font></body></html>

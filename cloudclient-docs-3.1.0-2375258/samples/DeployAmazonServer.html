@@ -1,0 +1,13 @@
+<html><body><font face="Courier New">
+#!/bin/sh
+<p>#
+<p># Setup environment variables for auto login to CloudClient Shell
+<p>. ./env.sh
+
+<p># Provide CatalogItem/Blueprint and Group Name, a guid or name is supported
+<p>export blueprint='"Apache Web Server (Amazon)"'
+<p>export group='"CSE Dev"'
+
+<p># Execute CloudClient
+<p>./bin/cloudclient.sh vra catalog request submit --id $blueprint --groupid $group --reason test --properties "__amazon.instanceType=t1.micro,__amazon_advancedCapabilitiesMode=false,__amazon.ebs.totalStorageRequested=0,Vrm.DataCenter.Location=us-west-2a" --export /tmp/request.txt
+</font></body></html>

@@ -1,0 +1,156 @@
+<html>
+<body bgcolor="FFFFFF">
+<font face="Arial" size="2">
+<H3><p align="center"><font color="#336699">CloudClient Scripting</font></p></H3>
+<div id="scripting">
+<hr>
+<p>Automatic login can also be achieved using follwing three ways :-
+<li><a href="#envvars">System Environment Variables </a></li>
+<li><a href="#propsfile">CloudClient.properties File </a></li>
+<li><a href="#sessions">CloudClient Persistent Sessions </a></li>
+<p>This allows external scripts (bash/powershell etc) to interact and run commands.</p>
+<p>We can use environment variables and properties file together to provide values of
+login variables selectively i.e. properties file can provide some values while other
+values will be taken from environment variables. Environment variables have higher precedence than
+properties file. Note that you have flexibility to define a variable in properties file 
+and then override its value in environment variable.  
+Highest precedence is given to CloudClient sessions if available, followed by Environment variables , followed by 
+CloudClient.properties file. Following sequence explains precedence order in detail:-
+
+<ol type="1">
+<li>Use persistent session if available (named using CLOUDCLIENT_SESSION_KEY) for login, report failure if 
+login is not successful or session is expired (sessions expire after 30 days) </li>
+
+<li>If session is not available then look for default session for login, report failure if login is not successful </li>
+
+<li>If no sessions are available then read login credentials from the CloudClient.properties file. </li>
+
+<li>Read login credentials defined in environment variables and override values of available variables. 
+Note that some values read in previous step using properties file will be overriden here. </li>
+
+<li>Try to login using the login credentials read from properties file and environment variables, if 
+login is successful create a session file using the CLOUDCLIENT_SESSION_KEY. If login fails, report the failure.</li>
+</ol>
+
+<p> There are different commands to know if the login was successful and to know general information about the current login. 
+This is explained in the <a href="#validatelogin">Validate Login</a> section at the end.</p>
+
+<p> Using a password Keyfile, CloudClient provides a way to encrypt your passwords. It is explained 
+in section <a href="#keyfile"> Encrypt Password to keyfile </a>
+
+<hr>
+<H4><a name="keyfile">Encrypt Password to keyfile</a></H4>
+<p>Passwords can be provided in clear text or simply encrypted to a file using the following command:</p>
+<font face="Courier New">
+<p># login keyfile --file mypass.txt [--password mypassword]</p>
+</font>
+<p>If you don't provide a <font face="Courier New">--password</font> parameter, you will be prompted to securely enter the password to encrypt to a file</p>
+
+<hr>
+<a name="envvars"><H3>System Environment Variables</H3><a>
+Alternatively, to the CloudClient.properties file, system environment variables can be set instead. For example:
+<p><font face="Courier New">vra_server=vraServer.mydomain.com</font></p>
+
+<table style="border:1px solid black; border-collapse:collapse;">
+<tr>
+<th style="border:1px solid black;" bgcolor="#C0C0C0">Variable</th>
+<th style="border:1px solid black;" bgcolor="#C0C0C0">Description</th>
+</tr>
+<tr><td style="border:1px solid black;" >vra_server</td><td style="border:1px solid black;" >vRA Server Name or IP Address</td></tr>
+<tr><td style="border:1px solid black;" >vra_tenant</td><td style="border:1px solid black;" >Tenant to connect to, defaults to vsphere.local if left empty</td></tr>
+<tr><td style="border:1px solid black;" >vra_username</td><td style="border:1px solid black;" >vRA Username - to login to Top level system administrator the username is ""administrator@vsphere.local</td></tr>
+<tr><td style="border:1px solid black;" >vra_password</td><td style="border:1px solid black;" >vRA Password</td></tr>
+<tr><td style="border:1px solid black;" >vra_keyfile</td><td style="border:1px solid black;" >Location to encrypted keyfile</td></tr>
+<tr><td style="border:1px solid black;" >vra_iaas_server</td><td style="border:1px solid black;" >vRA Infrastructure Server Name, if left blank it is automatically discovered</td></tr>
+<tr><td style="border:1px solid black;" >vra_iaas_username</td><td style="border:1px solid black;" >vRA NTLM Username, ie: Administrator</td></tr>
+<tr><td style="border:1px solid black;" >vra_iaas_password</td><td style="border:1px solid black;" >vRA NTLM Password</td></tr>
+<tr><td style="border:1px solid black;" >vra_iaas_keyfile</td><td style="border:1px solid black;" >Location to encrypted keyfile</td></tr>
+</table>
+
+<hr>
+<H3><a name="propsfile">CloudClient.properties file</a></H3>
+<H4>Generate CloudClient.properties file with the command:</H4>
+<p><font face="Courier New">login autologinfile</font></p>
+
+<p><b>Edit CloudClient.Properties file</b></p>
+<font face="Courier New">
+<p>#vra_server : vRealize Automation Virtual Appliance</p>
+<p>vra_server=vraServer@mydomain.com</p>
+<p>#vra_tenant : Tenant Name, defaults to vsphere.local</p>
+<p>vra_tenant=Development</p>
+<p>#vra_username : SSO username in the form user@domain.com</p>
+<p>vra_username=User1@mydomain.com</p>
+<p>#vra_password : SSO password</p>
+<p>vra_password=mypassword</p>
+<p>#vra_keyfile : Encrypted file location of SSO password</p>
+<p>vra_keyfile=</p>
+<br>
+<p>#Some Administrator level API calls required Windows Authentication to communicate to the vRA Infrastructure Service Components</p>
+<p>#vra_iaas_server : Infrastructure Server (Windows Authentication), defaults to finding the name dynamically from vRA</p>
+<p>vra_iaas_server=</p>
+<p>#vra_iaas_username : Windows username in the form user@domain</p>
+<p>vra_iaas_username=Administrator</p>
+<p>#vra_iaas_password :  Windows password</p>
+<p>vra_iaas_password=mypassword</p>
+<p>#vra_iaas_keyfile : Encrypted file location of Windows password</p>
+<p>vra_iaas_keyfile=</p>
+</font>
+
+<hr>
+
+<H3><a name="sessions">CloudClient Persistent sessions </a></H3>
+Cloudclient allows re-using the authentication sessions by persisting them to encrypted files. 
+The sessions are stored under directory 'USER_HOME/.cloudclient' and files are named 'vra.session.session-key' & 'iaas.session.session-key'.
+The value for 'session-key' is provided through environment variable CLOUDCLIENT_SESSION_KEY.
+Sessions can be created using the credentials specified in CloudClient.properties file or through environmental varaiable.
+Following is an example of creating sessions and re-using them. Sessions are created using credentials provided using environment variables. 
+<pre><span class="inner-pre" style="font-size: 12px">
+# create session for administrator@vsphere.local user #
+export CLOUDCLIENT_SESSION_KEY=admin;
+export vra_server=vcac148-085-048.eng.vmware.com
+export vra_username=administrator@vsphere.local;
+export vra_password=vmware;
+sh cloudclient.sh vra tenant list;
+
+# create session for fritz@coke.vmware.com user #
+export CLOUDCLIENT_SESSION_KEY=fritz;
+export vra_username=fritz@coke.vmware.com;
+export vra_password=password;
+export vra_tenant=qe;
+sh cloudclient.sh vra credential list;
+
+# create session for tony@coke.vmware.com user #
+export CLOUDCLIENT_SESSION_KEY=tony;
+export vra_username=tony@coke.com;
+export vra_password=password;
+export vra_tenant=qe;
+sh cloudclient.sh vra credential list;
+
+# re-use the session created for fritz@coke.vmware.com user #
+export CLOUDCLIENT_SESSION_KEY=fritz;
+sh cloudclient.sh vra credential list;
+</span></pre>
+
+<br>
+To create sessions using the properties file, you can specify value for environment variable CLOUDCLIENT_SESSION_KEY and then specify the credentials
+in the CloudClient.properties file. For creating a new session again, change the value of CLOUDCLIENT_SESSION_KEY and specify new set of 
+credentials in the CloudClient.properties, the session will be saved to a new file named using the value of CLOUDCLIENT_SESSION_KEY.
+<hr>
+
+<a name="validatelogin"><H3>Validate Login</H3><a>
+<p>Once the CloudClient session is available or Environment vars are set or CloudClient.properties is in place (Sessions take highest precedence, followed by Environment variables followed by CloudClient.properties file); you can test to see of this was successful.
+ Also the autologin will display the login information right away before presenting the cloudclient CLI as seen below.</p>
+<img width="70%" height="75%" src="images/AutoLogin.png">
+<br>
+<p>vRA SSO login indicates the SSO authentication with vRA.</p>
+<p>IaaS Model Manager login indicates the NTLM authentication with IaaS server.</p>
+<hr>
+
+</font>
+</div>
+
+<div style="position: relative">
+   <p style="bottom: 0; width:100%; text-align: center"> <small>Copyright 2014 VMware, Inc. All rights reserved.</small></p>
+ </div>
+</body>
+</html>

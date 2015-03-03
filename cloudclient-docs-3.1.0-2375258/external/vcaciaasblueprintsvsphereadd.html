@@ -1,0 +1,21 @@
+<font face="Arial">
+<small>
+<H4>Example</H4>
+<p>
+<p> Firstly export a blueprint to JSON format in which to use as base policy & settings template in which to base the newly created one.
+<ul>
+<li>Create a new IaaS blueprint within the vRA Portal or select an existing one <font face="Courier New">[vra iaas blueprint list]</font></li>
+<li>Export the blueprint to a file<font face="Courier New">[vra iaas blueprint detail --name "My Dev Blueprint" --export blueprint.json"]</font></li>
+<li>You can edit blueprint.json and make any required changes.</li>
+</ul>
+
+<p>If you want to change the provisioning workflow to be altered modify the <font face="Courier New">WorkflowId</font> property to <font face="Courier New">WorkflowName</font> & provide a valid workflow, ie: "CloneWorkflow". This can be good for exporting from one vRA Server to another.</p>
+
+<p>Create a new template with <font face="Courier New">[vra iaas blueprints vsphere add --inputfile blueprint.json --name "My Dev Blueprint 2" --cpu 4 --memory 2048 --servicename Infrastructure --description "My Dev Blueprint 2"]</font></p>
+
+<p> If you provide <font face="Courier New">--clonefrom</font> parameter CloudClient will validate this machine exists within vRA
+
+</small>
+</font>
+
+

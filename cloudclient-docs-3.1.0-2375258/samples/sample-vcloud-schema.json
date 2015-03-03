@@ -1,0 +1,438 @@
+{
+  "fieldIds" : [ "reservationNetworks", "allocationModel", "reservationMemory", "computeResource", "machineQuota", "reservationStorages" ],
+  "fields" : [ {
+    "id" : "allocationModel",
+    "label" : "Allocation Model",
+    "description" : "The allocation model for the reservation",
+    "dataType" : {
+      "type" : "primitive",
+      "typeId" : "INTEGER"
+    },
+    "displayAdvice" : null,
+    "permissibleValues" : null,
+    "state" : {
+      "empty" : false,
+      "facets" : [ {
+        "type" : "readOnly",
+        "value" : {
+          "type" : "constantClause",
+          "value" : {
+            "type" : "boolean",
+            "value" : true
+          }
+        }
+      } ],
+      "dependencies" : [ ]
+    },
+    "isMultiValued" : false,
+    "columns" : [ ]
+  }, {
+    "id" : "reservationNetworks",
+    "label" : "Network",
+    "description" : null,
+    "dataType" : {
+      "type" : "complex",
+      "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+      "componentId" : null,
+      "classId" : "Infrastructure.Reservation.Network",
+      "typeFilter" : null,
+      "label" : "Network",
+      "schema" : {
+        "fieldIds" : [ "networkPath", "networkProfile" ],
+        "fields" : [ {
+          "id" : "networkPath",
+          "label" : "Network Path",
+          "description" : "Network path of the reservation",
+          "dataType" : {
+            "type" : "ref",
+            "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+            "componentId" : null,
+            "classId" : "Network",
+            "typeFilter" : null,
+            "label" : "Network",
+            "typeId" : "ENTITY_REFERENCE"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : false,
+            "facets" : [ {
+              "type" : "mandatory",
+              "value" : {
+                "type" : "constantClause",
+                "value" : {
+                  "type" : "boolean",
+                  "value" : true
+                }
+              }
+            } ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        }, {
+          "id" : "networkProfile",
+          "label" : "Network Profile",
+          "description" : "The Network Profile",
+          "dataType" : {
+            "type" : "ref",
+            "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+            "componentId" : null,
+            "classId" : "NetworkProfile",
+            "typeFilter" : null,
+            "label" : "Network Profile",
+            "typeId" : "ENTITY_REFERENCE"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : {
+            "type" : "dynamic",
+            "customAllowed" : false,
+            "dependencies" : [ ]
+          },
+          "state" : {
+            "empty" : true,
+            "facets" : [ ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        } ]
+      },
+      "typeId" : "COMPLEX"
+    },
+    "displayAdvice" : "DATA_TABLE",
+    "permissibleValues" : {
+      "type" : "dynamic",
+      "customAllowed" : false,
+      "dependencies" : [ "computeResource" ]
+    },
+    "state" : {
+      "empty" : false,
+      "facets" : [ {
+        "type" : "mandatory",
+        "value" : {
+          "type" : "constantClause",
+          "value" : {
+            "type" : "boolean",
+            "value" : true
+          }
+        }
+      } ],
+      "dependencies" : [ ]
+    },
+    "isMultiValued" : true,
+    "columns" : [ ]
+  }, {
+    "id" : "reservationMemory",
+    "label" : "Memory",
+    "description" : null,
+    "dataType" : {
+      "type" : "complex",
+      "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+      "componentId" : null,
+      "classId" : "Infrastructure.Reservation.Memory",
+      "typeFilter" : null,
+      "label" : "Memory",
+      "schema" : {
+        "fieldIds" : [ "computeResourceMemoryTotalSizeMB", "memoryReservedSizeMb" ],
+        "fields" : [ {
+          "id" : "computeResourceMemoryTotalSizeMB",
+          "label" : "Physical Memory (MB)",
+          "description" : "The physical capacity (MB) for the memory",
+          "dataType" : {
+            "type" : "primitive",
+            "typeId" : "INTEGER"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : false,
+            "facets" : [ {
+              "type" : "readOnly",
+              "value" : {
+                "type" : "constantClause",
+                "value" : {
+                  "type" : "boolean",
+                  "value" : true
+                }
+              }
+            } ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        }, {
+          "id" : "memoryReservedSizeMb",
+          "label" : "Memory Reservation (MB)",
+          "description" : "The reserved capacity (MB) for the memory",
+          "dataType" : {
+            "type" : "primitive",
+            "typeId" : "INTEGER"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : true,
+            "facets" : [ ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        } ]
+      },
+      "typeId" : "COMPLEX"
+    },
+    "displayAdvice" : "DATA_TABLE",
+    "permissibleValues" : null,
+    "state" : {
+      "empty" : true,
+      "facets" : [ ],
+      "dependencies" : [ ]
+    },
+    "isMultiValued" : false,
+    "columns" : [ ]
+  }, {
+    "id" : "computeResource",
+    "label" : "Compute Resource",
+    "description" : "The compute resource for the reservation",
+    "dataType" : {
+      "type" : "ref",
+      "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+      "componentId" : null,
+      "classId" : "ComputeResource",
+      "typeFilter" : "ReservationTypeId",
+      "label" : "Compute Resource",
+      "typeId" : "ENTITY_REFERENCE"
+    },
+    "displayAdvice" : null,
+    "permissibleValues" : {
+      "type" : "dynamic",
+      "customAllowed" : false,
+      "dependencies" : [ ]
+    },
+    "state" : {
+      "empty" : false,
+      "facets" : [ {
+        "type" : "mandatory",
+        "value" : {
+          "type" : "constantClause",
+          "value" : {
+            "type" : "boolean",
+            "value" : true
+          }
+        }
+      } ],
+      "dependencies" : [ ]
+    },
+    "isMultiValued" : false,
+    "columns" : [ ]
+  }, {
+    "id" : "machineQuota",
+    "label" : "Machine Quota",
+    "description" : "The machine quota for the reservation",
+    "dataType" : {
+      "type" : "primitive",
+      "typeId" : "INTEGER"
+    },
+    "displayAdvice" : null,
+    "permissibleValues" : null,
+    "state" : {
+      "empty" : true,
+      "facets" : [ ],
+      "dependencies" : [ ]
+    },
+    "isMultiValued" : false,
+    "columns" : [ ]
+  }, {
+    "id" : "reservationStorages",
+    "label" : "Storage",
+    "description" : null,
+    "dataType" : {
+      "type" : "complex",
+      "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+      "componentId" : null,
+      "classId" : "Infrastructure.Reservation.Storage",
+      "typeFilter" : null,
+      "label" : "Storage",
+      "schema" : {
+        "fieldIds" : [ "storagePath", "storageReservationPriority", "computeResourceStorageTotalSizeGB", "storageReservedSizeGB", "storageEnabled", "computeResourceStorageFreeSizeGB" ],
+        "fields" : [ {
+          "id" : "storagePath",
+          "label" : "Storage Path",
+          "description" : "The storage path of the storage",
+          "dataType" : {
+            "type" : "ref",
+            "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+            "componentId" : null,
+            "classId" : "Storage",
+            "typeFilter" : null,
+            "label" : "Storage Path",
+            "typeId" : "ENTITY_REFERENCE"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : false,
+            "facets" : [ {
+              "type" : "mandatory",
+              "value" : {
+                "type" : "constantClause",
+                "value" : {
+                  "type" : "boolean",
+                  "value" : true
+                }
+              }
+            } ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        }, {
+          "id" : "storageReservationPriority",
+          "label" : "Priority",
+          "description" : "The reservation priority for the storage",
+          "dataType" : {
+            "type" : "primitive",
+            "typeId" : "INTEGER"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : false,
+            "facets" : [ {
+              "type" : "mandatory",
+              "value" : {
+                "type" : "constantClause",
+                "value" : {
+                  "type" : "boolean",
+                  "value" : true
+                }
+              }
+            } ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        }, {
+          "id" : "computeResourceStorageTotalSizeGB",
+          "label" : "Total (GB)",
+          "description" : "The total physical capacity (GB) for the storage",
+          "dataType" : {
+            "type" : "primitive",
+            "typeId" : "INTEGER"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : false,
+            "facets" : [ {
+              "type" : "readOnly",
+              "value" : {
+                "type" : "constantClause",
+                "value" : {
+                  "type" : "boolean",
+                  "value" : true
+                }
+              }
+            } ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        }, {
+          "id" : "storageReservedSizeGB",
+          "label" : "This reservation reserved (GB)",
+          "description" : "The reserved capacity size (GB) for the storage",
+          "dataType" : {
+            "type" : "primitive",
+            "typeId" : "INTEGER"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : true,
+            "facets" : [ ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        }, {
+          "id" : "storageEnabled",
+          "label" : "Enabled",
+          "description" : "Whether the storage is enabled to reserve",
+          "dataType" : {
+            "type" : "primitive",
+            "typeId" : "BOOLEAN"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : false,
+            "facets" : [ {
+              "type" : "mandatory",
+              "value" : {
+                "type" : "constantClause",
+                "value" : {
+                  "type" : "boolean",
+                  "value" : true
+                }
+              }
+            } ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        }, {
+          "id" : "computeResourceStorageFreeSizeGB",
+          "label" : "Free (GB)",
+          "description" : "The free capacity (GB) for the storage",
+          "dataType" : {
+            "type" : "primitive",
+            "typeId" : "INTEGER"
+          },
+          "displayAdvice" : null,
+          "permissibleValues" : null,
+          "state" : {
+            "empty" : false,
+            "facets" : [ {
+              "type" : "readOnly",
+              "value" : {
+                "type" : "constantClause",
+                "value" : {
+                  "type" : "boolean",
+                  "value" : true
+                }
+              }
+            } ],
+            "dependencies" : [ ]
+          },
+          "isMultiValued" : false,
+          "columns" : [ ]
+        } ]
+      },
+      "typeId" : "COMPLEX"
+    },
+    "displayAdvice" : "DATA_TABLE",
+    "permissibleValues" : {
+      "type" : "dynamic",
+      "customAllowed" : false,
+      "dependencies" : [ "computeResource" ]
+    },
+    "state" : {
+      "empty" : false,
+      "facets" : [ {
+        "type" : "mandatory",
+        "value" : {
+          "type" : "constantClause",
+          "value" : {
+            "type" : "boolean",
+            "value" : true
+          }
+        }
+      } ],
+      "dependencies" : [ ]
+    },
+    "isMultiValued" : true,
+    "columns" : [ ]
+  } ]
+}

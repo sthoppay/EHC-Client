@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Generate vSphere Reservation template</title>
+    <style>
+        p {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+<p> #!/bin/bash </p>
+
+<p> # </p>
+
+<p> # Setup environment variables for auto login to CloudClient Shell </p>
+
+<p> . ./env.sh </p>
+
+<p> # Provide businessGroupId and computeResourceId </p>
+
+<p> export businessGroupId="3cc240ad-0aa9-4438-96a1-f8fff25e38ec" </p>
+
+<p> export computeResourceId="fe299b30-c12a-4fc2-b4a1-04ac059f29e8" </p>
+
+<p> export reservationName="VSphereReservationName"</p>
+
+<p> # Execute CloudClient </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation generate template --type VSPHERE --name
+    'VSphereReservationName' --businessGroupId $businessGroupId --computeResourceId
+    $computeResourceId --export /tmp/vsphere-request.json </p>
+</body>
+</html>

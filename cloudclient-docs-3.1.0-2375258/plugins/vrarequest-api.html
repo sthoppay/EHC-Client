@@ -1,0 +1,69 @@
+<html><body><p align="left"><font size="6" face="Arial"><a id="top">VRA REQUEST Commands</a></font></p><br><table style="border=1px solid black;border-collapse:collapse;"> <tr><th bgcolor="#336699"><font face="Arial" color="white">Description</font></th><th bgcolor="#336699"><font face="Arial" color="white">Command</font></th></tr><tr><td><small><a style="text-decoration:none" href="#ApproveRequests" target="main"><font face="Arial" color="#000000">Approve Requests&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra request approve</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#RequestDetails" target="main"><font face="Arial" color="#000000">Request Details&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra request detail</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#ListRequests" target="main"><font face="Arial" color="#000000">List Requests&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra request list</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#RejectRequests" target="main"><font face="Arial" color="#000000">Reject Requests&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra request reject</font></small></td></tr></table><br><hr color="F0F0F0"/><table> 
+<tr><td><H4><font face="Arial"><a id="ApproveRequests">Approve Requests</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra request approve</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--ids</small></font><small><font face="Arial"> (Select Request Ids (comma seperated) to approve)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--message</small></font><small><font face="Arial"> (Approval Message)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="RequestDetails">Request Details</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra request detail</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Select Request Id)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="ListRequests">List Requests</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra request list</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--state</small></font><small><font face="Arial"> (Select partial StateName)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--from</small></font><small><font face="Arial"> (From Date, format)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--to</small></font><small><font face="Arial"> (To Date, format)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--page</small></font><small><font face="Arial"> (page number)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--pageSize</small></font><small><font face="Arial"> (page size)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="RejectRequests">Reject Requests</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra request reject</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--ids</small></font><small><font face="Arial"> (Select Request Ids (comma seperated) to approve)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--message</small></font><small><font face="Arial"> (Approval Message)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<footer><p><small>Copyright 2014 VMware, Inc. All rights reserved.</small></p></footer></body></html>

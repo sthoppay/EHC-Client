@@ -1,0 +1,104 @@
+<html><body><p align="left"><font size="6" face="Arial"><a id="top">VRA BUSINESSGROUP Commands</a></font></p><br><table style="border=1px solid black;border-collapse:collapse;"> <tr><th bgcolor="#336699"><font face="Arial" color="white">Description</font></th><th bgcolor="#336699"><font face="Arial" color="white">Command</font></th></tr><tr><td><small><a style="text-decoration:none" href="#AddBusinessGroups" target="main"><font face="Arial" color="#000000">Add Business Groups&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra businessgroup add</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#GetBusinessGroupDetail" target="main"><font face="Arial" color="#000000">Get Business Group Detail&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra businessgroup detail</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#ListBusinessGroups" target="main"><font face="Arial" color="#000000">List Business Groups&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra businessgroup list</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#RemoveBusinessGroup" target="main"><font face="Arial" color="#000000">Remove Business Group&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra businessgroup remove</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#UpdateBusinessGroup" target="main"><font face="Arial" color="#000000">Update Business Group&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra businessgroup update</font></small></td></tr></table><br><hr color="F0F0F0"/><table> 
+<tr><td><H4><font face="Arial"><a id="AddBusinessGroups">Add Business Groups</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra businessgroup add</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--name</small></font><small><font face="Arial"> (Enter GroupName)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--adContainer</small></font><small><font face="Arial"> (Enter ActiveDirectoryContainer)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--email</small></font><small><font face="Arial"> (Enter AdministratorEmail)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--machinePrefixId</small></font><small><font face="Arial"> (Enter MachinePrefixId)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--admins</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--support</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--users</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--description</small></font><small><font face="Arial"> (Enter ActiveDirectoryContainer)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="GetBusinessGroupDetail">Get Business Group Detail</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra businessgroup detail</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="ListBusinessGroups">List Business Groups</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra businessgroup list</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--page</small></font><small><font face="Arial"> (page number)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--pageSize</small></font><small><font face="Arial"> (page size)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="RemoveBusinessGroup">Remove Business Group</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra businessgroup remove</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Enter GroupId)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="UpdateBusinessGroup">Update Business Group</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra businessgroup update</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Enter GroupName)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--adContainer</small></font><small><font face="Arial"> (Enter ActiveDirectoryContainer)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--email</small></font><small><font face="Arial"> (Enter AdministratorEmail)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--machinePrefixId</small></font><small><font face="Arial"> (Enter MachinePrefixId)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--addadmins</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--addsupport</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--addusers</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--removeadmins</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--removesupport</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--removeusers</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<footer><p><small>Copyright 2014 VMware, Inc. All rights reserved.</small></p></footer></body></html>

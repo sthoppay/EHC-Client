@@ -1,0 +1,88 @@
+<html>
+<body>
+<font size="6" face="Arial">VMware Site Recovery Manager (SRM) Plugin</font>
+
+<p>
+<font size="2" face="Arial">
+<p>This version of CloudClient supports vRA interoperability with <b>vRA 6.0 & 6.1</b> so that when machines fail over within SRM, vRA machines are updated to reflect new Host/Cluster/Reservation allocation for continued management.</p>
+
+<p align="center"><img src="../images/srm.gif" height="300" width="500">
+
+<br>
+<hr>
+<h2 id="vRA&amp;SRMResourceMachineProtection-Overview">
+	Overview</h2>
+<p>
+	To provide details on the setup required to protect resource machines with vRA SRM, making use of CloudClient v3.0.0 and its SRM support, vRA can be updated dynamically to allow for Day 2 operations and ongoing management to occur within vRA after a planned fail over or disaster occurrence.</p>
+<h2 id="vRA&amp;SRMResourceMachineProtection-ProblemStatement">
+	Problem Statement</h2>
+<p>
+	Typically a vSphere hosted VM managed by vRA belongs to a reservation, which belongs to a compute resource (cluster), which in turn belongs to a vSphere Endpoint. The VMs reservation in vRA needs to be accurate in order for vRA to know which vSphere proxy agent to utilize to manage that VM in the underlying vSphere infrastructure. This is all well and good and causes few (if any) problems in a single site setup, as the VM will not normally move from the vSphere endpoint it is originally located on.</p>
+<p>
+	With a multi-site deployment utilizing Site Recovery Manager all this changes as part of the site to site fail over process involves moving VMs from one vCenter to another. This has the effect in vRA of moving the VM to a different endpoint, but the reservation becomes stale. As a result it becomes no longer possible to perform day 2 operation on the VMs until the reservation is updated.</p>
+
+<h2 id="vRA&amp;SRMResourceMachineProtection-EnvironmentConfiguration">
+	Environment Configuration</h2>
+<h3 id="vRA&amp;SRMResourceMachineProtection-SRM">
+	SRM</h3>
+<ul>
+	<li>
+		SRM is configured as per normal best practices</li>
+	<li>
+		5.5 required to set the managedBy flag, and therefore be compatible with vRA and this solution</li>
+	<li>
+		A Custom Step is added at the beginning and the end of each Recovery Plan to call out to Cloud Client, executing pre and post migration scripts</li>
+	<li>
+		At this time spaces aren&#39;t supported in Recovery Plan names</li>
+	<li>
+		The syntax of the Custom Step call out is as follows:</li>
+</ul>
+<p>
+	<em>c:\windows\system32\cmd.exe /c &lt;path to cloud client&gt;\&lt;script name&gt;.bat </em></p>
+<h3 id="vRA&amp;SRMResourceMachineProtection-vRA">
+	vRA</h3>
+<ul>
+	<li>
+		vRA must be configured with a Proxy Agent for both Sites in the SRM configuration</li>
+	<li>
+		Data collection should be enabled on all compute resources with VMs that are members of recovery groups</li>
+	<li>
+		A blueprint should be created for each recovery plan. This should have the custom property of <em>vra.srm.groupname</em> set to the SRM Recovery Plan name</li>
+</ul>
+<h3 id="vRA&amp;SRMResourceMachineProtection-CloudClient">
+	Cloud Client</h3>
+<ul>
+	<li>
+		Cloud Client is installed on each of the SRM servers. This is a requirement for SRM to be able to call out to Cloud Client via a Custom Recovery Plan Step</li>
+	<li>
+		Cloud Client should be configured for auto login as pass-through authentication is not supported</li>
+	<li>
+		The vrashell.bat file must be modified as below:</li>
+</ul>
+<p>
+	<em>&quot;\lib/*&quot; should be replaced with &quot;&lt;path to cloud client&gt;\lib/*&quot;</em></p>
+<ul>
+	<li>
+		The Pre and Post scripts are listed below</li>
+</ul>
+<h4 id="vRA&amp;SRMResourceMachineProtection-PreFailoverScript:">
+	Pre Failover Script:</h4>
+<p>
+	<em>&lt;path to cloud client&gt;\vrashell.bat srm protected vra vms stop datacollection --srmserver cse-vcenter-dr.eng.vmware.com --srmuser &lt;vCenter User&gt; --srmpassword &lt;Password&gt; --recoveryplan %VMware_RecoveryName% --recoverymode %VMware_RecoveryMode%</em></p>
+<h4 id="vRA&amp;SRMResourceMachineProtection-PostFailoverScript:">
+	Post Failover Script:</h4>
+<p>
+	<em><em>&lt;path to cloud client&gt;</em>\vrashell.bat srm protected vra vms start datacollection --recoveryplan %VMware_RecoveryName% --recoverymode %VMware_RecoveryMode% --vcenterinfo %VMware_VC_Host%</em></p>
+<h3 id="vRA&amp;SRMResourceMachineProtection-ProcessFlow">
+	Process Flows</h3>
+
+	<img src="../images/SRMProcessflow.png" width="400">
+<p>
+
+
+
+</font>
+</body>
+
+<footer><p><small>Copyright 2014 VMware, Inc. All rights reserved.</small></p></footer>
+</html>

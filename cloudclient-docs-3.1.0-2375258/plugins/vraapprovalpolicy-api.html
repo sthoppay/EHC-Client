@@ -1,0 +1,65 @@
+<html><body><p align="left"><font size="6" face="Arial"><a id="top">VRA APPROVALPOLICY Commands</a></font></p><br><table style="border=1px solid black;border-collapse:collapse;"> <tr><th bgcolor="#336699"><font face="Arial" color="white">Description</font></th><th bgcolor="#336699"><font face="Arial" color="white">Command</font></th></tr><tr><td><small><a style="text-decoration:none" href="#AddApprovalPolicy" target="main"><font face="Arial" color="#000000">Add Approval Policy&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra approvalpolicy add</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#GetApprovalPolicyDetails" target="main"><font face="Arial" color="#000000">Get Approval Policy Details&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra approvalpolicy detail</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#ListApprovalPolicies" target="main"><font face="Arial" color="#000000">List Approval Policies&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra approvalpolicy list</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#RemoveApprovalPolicy" target="main"><font face="Arial" color="#000000">Remove Approval Policy&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra approvalpolicy remove</font></small></td></tr></table><br><hr color="F0F0F0"/><table> 
+<tr><td><H4><font face="Arial"><a id="AddApprovalPolicy">Add Approval Policy</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra approvalpolicy add</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--name</small></font><small><font face="Arial"> (Approval Policy Name)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--inputfile</small></font><small><font face="Arial"> (Provide input file containing policy, this can be exported from one already created an modified)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="GetApprovalPolicyDetails">Get Approval Policy Details</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra approvalpolicy detail</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Approval Policy Id)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--name</small></font><small><font face="Arial"> (Approval Policy Name)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="ListApprovalPolicies">List Approval Policies</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra approvalpolicy list</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--page</small></font><small><font face="Arial"> (page number)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--pageSize</small></font><small><font face="Arial"> (page size)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="RemoveApprovalPolicy">Remove Approval Policy</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra approvalpolicy remove</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Approval Policy Id)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--name</small></font><small><font face="Arial"> (Approval Policy Name)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<footer><p><small>Copyright 2014 VMware, Inc. All rights reserved.</small></p></footer></body></html>

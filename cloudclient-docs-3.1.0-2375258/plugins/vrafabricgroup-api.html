@@ -1,0 +1,88 @@
+<html><body><p align="left"><font size="6" face="Arial"><a id="top">VRA FABRICGROUP Commands</a></font></p><br><table style="border=1px solid black;border-collapse:collapse;"> <tr><th bgcolor="#336699"><font face="Arial" color="white">Description</font></th><th bgcolor="#336699"><font face="Arial" color="white">Command</font></th></tr><tr><td><small><a style="text-decoration:none" href="#AddFabricGroups" target="main"><font face="Arial" color="#000000">Add Fabric Groups&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra fabricgroup add</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#GetFabricGroupDetail" target="main"><font face="Arial" color="#000000">Get Fabric Group Detail&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra fabricgroup detail</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#ListFabricGroups" target="main"><font face="Arial" color="#000000">List Fabric Groups&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra fabricgroup list</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#RemoveFabricGroup" target="main"><font face="Arial" color="#000000">Remove Fabric Group&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra fabricgroup remove</font></small></td></tr><tr><td><small><a style="text-decoration:none" href="#UpdateFabricGroup" target="main"><font face="Arial" color="#000000">Update Fabric Group&nbsp;&nbsp;&nbsp;&nbsp;</font></a></small> <td><small><font face="Courier New">vra fabricgroup update</font></small></td></tr></table><br><hr color="F0F0F0"/><table> 
+<tr><td><H4><font face="Arial"><a id="AddFabricGroups">Add Fabric Groups</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra fabricgroup add</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--name</small></font><small><font face="Arial"> (Enter GroupName)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--admins</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--description</small></font><small><font face="Arial"> (Enter Description)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--computeresourceids</small></font><small><font face="Arial"> (Enter Comma Separated List of ComputeResourceIds)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="GetFabricGroupDetail">Get Fabric Group Detail</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra fabricgroup detail</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Id of the Fabric Group)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="ListFabricGroups">List Fabric Groups</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra fabricgroup list</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--page</small></font><small><font face="Arial"> (page number)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--pageSize</small></font><small><font face="Arial"> (page size)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Supported formats include)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--columns</small></font><small><font face="Arial"> (Customized columns to include in TABLE or CSV rendering. Regex allowed. Eg)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="RemoveFabricGroup">Remove Fabric Group</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra fabricgroup remove</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Enter GroupId)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<table> 
+<tr><td><H4><font face="Arial"><a id="UpdateFabricGroup">Update Fabric Group</a></font></H4></td></tr> 
+<tr><td><font face="Courier New">vra fabricgroup update</font></td>
+</table> <br> 
+<table style="margin-left:20px">
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--id</small></font><small><font face="Arial"> (Enter GroupName)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">true</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--description</small></font><small><font face="Arial"> (Enter Description)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--addadmins</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--addcomputeresource</small></font><small><font face="Arial"> (Enter Comma Seperated List of ComputeResourceIds)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--removeadmins</small></font><small><font face="Arial"> (Enter Comma Seperated List of Users)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--removecomputeresource</small></font><small><font face="Arial"> (Enter Comma Seperated List of ComputeResourceIds)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--format</small></font><small><font face="Arial"> (Format the response in either Tabular format (default), JSON or CSV)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+<tr><td><b><font face="Arial"><small>Parameter</b></small></font></td><td><font face="Arial"><small>--export</small></font><small><font face="Arial"> (Export to File)</font></small></td></tr> 
+<tr><td><b><small><font face="Arial">Mandatory</font></small></b></td><td><small><font face="Arial">false</font></small></td></tr> <tr><td><br></td></tr> 
+</table> 
+<a href="#top"><img src="../images/ArrowUp.png"></a><hr color="F0F0F0"/> 
+<footer><p><small>Copyright 2014 VMware, Inc. All rights reserved.</small></p></footer></body></html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Create a vSphere Reservation</title>
+    <style>
+        p {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+<p> #!/bin/bash </p>
+
+<p> # </p>
+
+<p> # Setup environment variables for auto login to CloudClient Shell </p>
+
+<p> . ./env.sh </p>
+
+<p> # Run the script to generate sample json file that can be used to create a new
+    reservation. </p>
+
+<p> . ./GenerateVSphereReservationTemplate.sh </p>
+
+<p> # Though the above command create a sample reservation template, if used as is to create a new
+    reservation, the reservation cannot be used to provision machines as there are no resources
+    allocated/reserved such as memory, disk size, etc. <br>
+
+    # Modify the json file as needed to remove any values for multi valued fields, so that only
+    those resources needed are selected to create reservation. <br>
+
+    # Modify the json file, to enter the appropriate values for fields such as
+    memoryReservedSizeMb, machineQuota, storageReservationPriority, storageReservedSizeGB, so that
+    the reservation can be used to provision machines. </p>
+
+<p> # Pause the script to allow the user to modify json as needed <br>
+    read -p "Press [Enter] key to create the reservation once the json is modified as needed..."</p>
+
+<p> # Create a new reservation <br>
+
+    $cloudclient_home/bin/cloudclient.sh vra reservation add --type VSPHERE --inputfile
+    /tmp/vsphere-request.json </p>
+
+<p> # A sample json file can be used to create multiple reservations by providing the values for
+    arguments to 'vra reservation add' command. <br>
+
+    # If values are provided for 'vra reservation add' command arguments '--businessGroupId',
+    '--enable', '--name', '--priority', '--reservationPolicyId', and '--tenantId', these values are
+    used instead of the ones in the json file provided in the '--inputfile' argument. <br>
+
+    # Using the following command, another reservation can be created with just the values defined
+    in command arguments being different. </p>
+
+<p> # $cloudclient_home/bin/cloudclient.sh vra reservation add --type VSPHERE --inputfile
+    /tmp/vsphere-request.json --businessGroupId='valid-business-group-id-1' --enable false --name
+    'Reservation-1' --priority 1 --reservationPolicyId 'valid-reservation-policy-id-1' --tenant
+    'valid-tenant-id-1' </p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<font face="Arial">
+<small>
+<H4>Example</H4>
+<p>
+<p> In order to request a new VCO workflow the input variables need to be passed in, this is done by
+creating a JSON input file in from the command which can be edited prior to the request OR by using the --inputs options.</p>
+<p><font face="Courier New">vco workflow detail --id 39956a18-de3f-4034-b88c-eaccb2068b18 --requestfile testworkflow.json</font>. </p>
+<p><img src="../images/VCO-Default-JSON.png">
+<p>The file can then either be edited or inputs can be provided on the command line in order to supply the VCO workflow with correct input parameters.</p>
+<p><img src="../images/VCO-WithValues-JSON.png">
+<p>Execute a new workflow with the command: <font face="Courier New">vco workflow request</font></p>
+<p>The result will return the URL, this can be additionally be called from the command <font face="Courier New">vco workflow http get</font> to get the workflow status</p>
+<p><img src="../images/VCO-Request.png">
+<p>Input values can be passed in conjuntion with the requestfile or by providing all input values on the command line.
+<p><b>Note: Values are semi colon separated</b>
+<p><img src="../images/VCO-Request-override.png">
+</small>
+</font>
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Get Schema for VSphere Reservation</title>
+    <style>
+        p {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+<p> #!/bin/bash </p>
+
+<p> # </p>
+
+<p> # Setup environment variables for auto login to CloudClient Shell </p>
+
+<p> . ./env.sh </p>
+
+<p> # Execute CloudClient </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation schema --type VSPHERE --export
+    /tmp/vsphere-schema.json </p>
+
+</body>
+</html>

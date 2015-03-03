@@ -1,0 +1,34 @@
+<html>
+<body bgcolor="FFFFFF">
+<font face="Arial" size="2">
+<H3><p align="center"><font color="#336699">CloudClient Launcher</font></p></H3>
+<div id="launcher">
+<hr>
+
+Libraries in the CloudClient lib folder should be added to the Java Environment SpringSource Suite (STS)
+<ul>
+<li value="1">Open STS & create a new java project or use an existing one</li>
+<li>Select "Build Path"</li>
+<li>Select "Add Libraries"</li>
+<li>Select "User Library"</li>
+<li>Create new user library (called CloudClientJars for example)</li>
+<li>Select External Jars and add to CloudClientJars</li>
+<li>Browse to the CloudClient lib folder on your filesystem and select all jar files</li>
+</ul>
+<img src="images/CloudClientJars.png">
+
+<br>
+<H4>Create your first CloudClient project</H4>
+<p>CloudClient commands can be executed from the <font face="Courier New">CloudClientLauncher</font> class and the results can be queried, use the <font face="Courier New">--format JSON</font> parameter to parse JSON responses</p>
+
+<p>The below images shows how to login and return all vCAC Service Items in JSON format</p>
+<img src="images/JavaCommandListServices.png">
+<hr>
+</font>
+</div>
+
+<div style="position: relative">
+   <p style="bottom: 0; width:100%; text-align: center"> <small>Copyright 2014 VMware, Inc. All rights reserved.</small></p>
+ </div>
+</body>
+</html>

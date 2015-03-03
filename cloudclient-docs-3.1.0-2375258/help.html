@@ -1,0 +1,144 @@
+<html>
+<head>
+    <script type="text/javascript">
+    function expand($id) {
+    	var selectedobj=document.getElementById($id);
+
+    	  if(selectedobj.className=='hide'){  //check if classname is hide 
+    	    selectedobj.style.display = "block";
+    	    selectedobj.readOnly=true;
+    	    selectedobj.className ='show';
+    	  }else{
+    	    selectedobj.style.display = "none";
+    	    selectedobj.className ='hide';
+    	 }
+    }
+    </script>
+  </head>
+<body>
+<label href onclick="expand('shell')"><H3><p align="center"><font color="#336699"><u>Using CloudClient Interactive Shell - click here</u></font></p></H3></label>
+<div id="shell" style="display:none">
+<hr>
+<p>Using the Cloud Client as an interactive shell provides a easy-to-use utility for performing many common VMware Cloud Management Platform Functions</p>
+<p>Launching Cloud Client</p>
+
+<p>Use the following procedure to launch Cloud Client on Windows.</p>
+<ul>
+<li value="1">Open a command prompt on your workstation.</li>
+<li>Change directories to the directory where you extracted the Cloud Client files.</li>
+<li>Enter <font face="Courier New">bin\cloudclient.bat</font></li>
+</ul>
+
+<p>Use the following procedure to launch Cloud Client on Linux or MacOSX.</p>
+    <ul>
+    <li value="1">Open a terminal on your workstation.</li>
+<li>Change directories to the directory where you extracted the Cloud Client files.</li>
+<li>Enter <font face="Courier New">./bin/cloudclient.sh</font></li>
+</ul>
+
+
+<p>You may also add CloudClient bin directory to PATH and then run cloudclient.bat or cloudclient.sh directly without the need to change the directories to the directory where you extracted the CloudClient files.</p>
+<ul>
+    <li>On Windows, open a command prompt on your workstation, and run the command <font face="Courier New">SET PATH=%PATH%;DriveLetter:\full\path\to\CloudClient\bin\directory\</font></li>
+    <li>On Unix or Linux or MacOSX, open a terminal on your workstation, and run the command <font face="Courier New">export PATH=$PATH:/full/path/to/CloudClient/bin/directory/</font></li>
+</ul>
+
+<p>The Cloud Client interface appears.</p>
+<img src="images/CloudClientLaunch.png"/>
+
+<hr>
+</div>
+
+<label href onclick="expand('scripting')"><H3><p align="center"><font color="#336699"><u>Using CloudClient Scripting - click here</u></font></p></H3></label>
+<div id="scripting" style="display:none">
+<hr>
+<p>Automatic login can also be achieved with having a CloudClient.properties file in place, in order to generate this open the shell and run:</p>
+<font face="Courier New">
+<small>
+</small><p>login autologinfile</p>
+<p># CloudClient.Properties File used to automatically login to CloudClient and it should be located in the same directory as bin and lib folders.</p>
+<p># Passwords can be provided or simply encrypted to a file, use command:</p>
+<br>
+<p># login keyfile --file mypass.txt --password mypassword</p>
+<p>#vra_server : vRealize Automation Virtual Appliance</p>
+<p>vra_server=</p>
+<p>#vra_tenant : Tenant Name, defaults to vsphere.local</p>
+<p>vra_tenant=</p>
+<p>#vra_username : SSO username in the form user@domain.com</p>
+<p>vra_username=</p>
+<p>#vra_password : SSO password</p>
+<p>vra_password=</p>
+<p>#vra_keyfile : Encrypted file location of SSO password</p>
+<p>vra_keyfile=</p>
+<br>
+<p># Some Administrator level API calls required Windows Authentication to communicate to the vCAC Infrastructure Service Components</p>
+<p>#vra_iaas_server : Infrastructure Server (Windows Authentication), defaults to finding the name dynamically from vCAC</p>
+<p>vra_iaas_server=</p>
+<p>#vra_iaas_username : Windows username in the form domain\user</p>
+<p>vra_iaas_username=</p>
+<p>#vra_iaas_username : Windows password</p>
+<p>vra_iaas_password=</p>
+<p>#vra_iaas_username : Encrypted file location of Windows password</p>
+<p>vra_iaas_keyfile=</p>
+</small>
+</font>
+
+<hr>
+</div>
+
+<label href onclick="expand('launcher')"><H3><p align="center"><font color="#336699"><u>Using CloudClient Launcher - click here</u></font></p></H3></label>
+<div id="launcher" style="display:none">
+<hr>
+
+Libraries in the CloudClient lib folder should be added to the Java Environment SpringSource Suite (STS)
+<ul>
+<li value="1">Open STS & create a new java project or use an existing one</li>
+<li>Select "Build Path"</li>
+<li>Select "Add Libraries"</li>
+<li>Select "User Library"</li>
+<li>Create new user library (called CloudClientJars for example)</li>
+<li>Select External Jars and add to CloudClientJars</li>
+<li>Browse to the CloudClient lib folder on your filesystem and select all jar files</li>
+</ul>
+
+<img src="images/CloudClientJars.png">
+<br>
+<H4>Create your first CloudClient project</H4>
+<p>CloudClient commands can be executed from the <font face="Courier New">CloudClientLauncher</font> class and the results can be queried, use the <font face="Courier New">--format JSON</font> parameter to parse JSON responses</p>
+
+<p>The below images shows how to login and return all vCAC Catalog Items in JSON format</p>
+<img src="images/JavaCommandListCatalogs.png">
+<hr>
+</div>
+
+<label href onclick="expand('commonUsage')"><H3><p align="center"><font color="#336699"><u>CloudClient Common Parameters - click here</u></font></p></H3></label>
+<div id="commonUsage" style="display:none">
+<hr>
+<p>CloudClient has some common parameters for all commands</p>
+
+<ul>
+<li>--format parameter exports all results to a table format by default, a comma seperated file (CSV) or JSON data</li>
+<li>--export parameter can write all responses to a file</li>
+</ul>
+
+<p>Table Format</p>
+<img src="images/format-table.png">
+<br>
+
+<p>CSV Format</p>
+<img src="images/format-csv.png">
+<br>
+
+<p>JSON Format</p>
+<img src="images/format-json.png">
+<br>
+
+<hr>
+</div>
+
+<div style="position: relative">
+   <p style="bottom: 0; width:100%; text-align: center"> <small>Copyright 2014 VMware, Inc. All rights reserved.</small></p>
+ </div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<html><body><font face="Courier New">
+<p>#!/bin/sh
+<p>#
+<p># Setup environment variables for auto login to CloudClient Shell
+<p>vco_server=10.10.10.10
+<p>vco_username=administrator@vsphere.local
+<p>vco_password=mypassword
+<p>
+<p># Provide WorkflowId and VCO JSON Payload
+<p>export wflowId=3c656670-cd72-49bc-9c79-831067c17d42
+<p>export requestFile=<a href="./vco.json">vco.json</a>
+<p>
+<p># Execute CloudClient
+<p>./bin/cloudclient.sh vco workflow detail --id $requestFile --requestfile $requestFile
+</font></body></html>

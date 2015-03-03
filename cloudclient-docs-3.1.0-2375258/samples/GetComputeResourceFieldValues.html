@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Get ComputeResource Ids for VSphere</title>
+    <style>
+        p {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+<p> #!/bin/bash </p>
+
+<p> # </p>
+
+<p> # Setup environment variables for auto login to CloudClient Shell </p>
+
+<p> . ./env.sh </p>
+
+<p> # Execute CloudClient </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    computeResource --export /tmp/compute-resource-values.json </p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{"parameters": [
+    {
+    "scope": "local",
+    "name": "Name",
+    "type": "string",
+    "value": {"string": {"value": "TomO"}}
+  },
+    {
+    "scope": "local",
+    "name": "Age",
+    "type": "number",
+    "value": {"number": {"value": "36"}}
+  },
+    {
+    "scope": "local",
+    "name": "Password",
+    "type": "SecureString",
+    "value": {"string": {"value": "MyPassword"}}
+  },
+    {
+    "scope": "local",
+    "name": "UKResident",
+    "type": "boolean",
+    "value": {"boolean": {"value": "true"}}
+  },
+    {
+    "scope": "local",
+    "name": "ADUser",
+    "type": "AD:User",
+    "value": {"sdk-object":     {
+      "type": "AD:User",
+      "id": "User:CN=myuser,CN=Users,DC=test,DC=vmware,DC=com"
+    }}
+  },
+    {
+    "scope": "local",
+    "name": "VCDatacenter",
+    "type": "VC:Datacenter",
+    "value": {"sdk-object":     {
+      "type": "VC:Datacenter",
+      "id": "VCDatacenter=vcenter.vmware.com/datacenter-1"
+    }}
+  },
+    {
+    "scope": "local",
+    "name": "Gender",
+    "type": "string",
+    "value": {"string": {"value": "Male"}}
+  }
+]}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Get Values for all vSphere Reservation fields</title>
+    <style>
+        p {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+<p> #!/bin/sh </p>
+
+<p> # </p>
+
+<p> # Setup environment variables for auto login to CloudClient Shell </p>
+
+<p> . ./env.sh </p>
+
+<p></p>
+
+<p> # Get the field ids using 'vra reservation schema' command or the included sample script
+    GetVSphereReservationSchema.sh <br>
+
+    # Schema states that there are several fields needed to create a vSphere reservation. While
+    some of the fields depend on other fields, others don't depend on any. <br>
+
+    # First retrieve the permissible values for all the fields that do not depend on other fields
+    and choose a value. <br>
+
+    # Once the values are chosen for the fields that do not depend on others, provide them as input
+    in order to get permissible values for fields that depend on other fields. <br>
+
+    # You may dry run the 'vra reservation field values' command without any dependency values, in
+    order to get the list of dependency fields for a field. <br>
+
+    # 'vra reservation field values' command gives permissible values to only those fields where
+    the user has to select a value from the available values like networks, storages, etc. <br>
+
+    # No need to run 'vra reservation field values' command for fields like machineQuota,
+    reservationMemory that do not have permissible values as per schema. <br>
+
+<p></p>
+
+<p> # Execute CloudClient to get compute resource field values. As per schema, computeResource
+    doesn't depend on other fields, but most of the other fields depend on computeResource. <br>
+
+    . ./GetComputeResourceFieldValues.sh </p>
+
+<p> # Provide chosen compute resource id <br>
+    export computeResourceId="fe299b30-c12a-4fc2-b4a1-04ac059f29e8" </p>
+
+<p> # Execute CloudClient to get values for the other fields. </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    vCNSTransportZone --dependencyValues computeResource=$computeResourceId --export
+    /tmp/vcns-transport-zone-values.json </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    reservationNetworks --dependencyValues computeResource=$computeResourceId --export
+    /tmp/reservation-networks-values.json </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    vCNSSecurityGroups --dependencyValues computeResource=$computeResourceId --export
+    /tmp/vcns-security-groups-values.json </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    reservationStorages --dependencyValues computeResource=$computeResourceId --export
+    /tmp/reservation-storages-values.json </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    resourcePool --dependencyValues computeResource=$computeResourceId --export
+    /tmp/resource-pool-values.json </p>
+
+<p></p>
+
+<p> #Fields that do not just depend on computeResource such as vCNSRoutedGateways.vCNSNetworkPath
+    and vCNSRoutedGateways.vCNSNetworkProfile need additional dependency values. </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    vCNSRoutedGateways --dependencyValues computeResource=$computeResourceId --export
+    /tmp/vcns-routed-gateways-values.json </p>
+
+<p> # Choose a value for vCNSEdge <br>
+export vcnsEdgeId="c7e5a78b-bacb-4bcd-8e8a-992710643b52" </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    vCNSRoutedGateways.vCNSNetworkPath --dependencyValues
+    computeResource=$computeResourceId,vCNSEdge=$vcnsEdgeId --export
+    /tmp/vcns-network-path-values.json </p>
+
+<p> # Choose a value for vCNSNetworkPath <br>
+
+    export vcnsNetworkPathId="a4b5d10f-08b1-408f-a481-ba11e37d0b61" </p>
+
+<p> $cloudclient_home/bin/cloudclient.sh vra reservation field values --type VSPHERE --fieldId
+    vCNSRoutedGateways.vCNSNetworkProfile --dependencyValues
+    computeResource=$computeResourceId,vCNSNetworkPath=$vcnsNetworkPathId --export
+    /tmp/vcns-network-profile-values.json </p>
+</body>
+</html>

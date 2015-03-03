@@ -1,0 +1,12 @@
+<html><body><font face="Courier New">
+<p>#!/bin/sh
+<p>#
+<p># Setup environment variables for auto login to CloudClient Shell
+<p>. ./env.sh
+
+<p># Provide CatalogItem/Blueprint and Group Name, a guid or name is supported
+<p>export requestId='"690bd9ab-5950-49d3-9d5d-890b547f52c2"'
+
+<p># Execute CloudClient
+<p>./bin/cloudclient.sh vra request approve --ids $requestId --message approved
+</font></body></html>
